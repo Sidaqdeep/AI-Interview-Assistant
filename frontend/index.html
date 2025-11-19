@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Interview Assistant</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body class="light-mode"> 
+
+  <div class="container">
+   
+    <div style="text-align: right; margin-bottom: 10px;">
+      <button id="themeToggleBtn" class="theme-toggle">🌙 Dark Mode</button>
+    </div>
+
+    <h1>🤖 AI Interview Assistant</h1>
+
+    <div class="upload-section">
+      <form id="resumeForm" enctype="multipart/form-data">
+        <label for="resumeFile" class="file-label">Upload Resume (.pdf format)</label>
+        <input type="file" id="resumeFile" name="file" required accept=".txt">
+        <p id="fileName" class="file-name"></p>
+
+        <label for="roundType" class="file-label">Select Round:</label>
+        <select id="roundType" name="round" required>
+          <option value="Technical">Technical</option>
+          <option value="HR">HR</option>
+          <option value="Behavioral">Behavioral</option>
+        </select>
+
+        <button type="submit">Start Mock Interview</button>
+      </form>
+    </div>
+
+    <div id="loadingSection" class="fade" style="display:none;">
+      <div class="loading-spinner"></div>
+      <p>Generating questions...</p>
+    </div>
+
+    <div id="questionsSection" class="fade" style="display:none;">
+      <h2>📝 Generated Questions</h2>
+      <ol id="questionsList"></ol>
+    </div>
+
+    <div id="webcamContainer" class="fade" style="display:none; text-align:center;">
+      <video id="webcam" autoplay muted class="webcam-feed"></video>
+    </div>
+
+    <div id="toast" class="toast"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html> 
+
