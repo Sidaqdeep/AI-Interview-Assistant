@@ -67,7 +67,7 @@ if (ext !== 'txt' && ext !== 'pdf') {
 
   try {
     console.log('🔄 Sending request to backend...');
-    const res = await fetch('https://ai-interview-assistant-02q1.onrender.com//generate_questions', {
+    const res = await fetch('https://ai-interview-assistant-02q1.onrender.com/generate_questions', {
       method: 'POST',
       body: formData
     });
@@ -177,7 +177,7 @@ questionsList.addEventListener('click', async (e) => {
     resultDiv.innerHTML = '';
 
     try {
-      const feedbackRes = await fetch('https://ai-interview-assistant-02q1.onrender.com//generate_feedback', {
+      const feedbackRes = await fetch('https://ai-interview-assistant-02q1.onrender.com/generate_feedback', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ question: questionText, candidate_answer: answerText })
